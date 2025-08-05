@@ -17,14 +17,21 @@ const alphaTech = [
 
 const allEmployees = alphaTech.concat(betaSoft, gammaDev);
 
-const result = allEmployees.filter((employee) => {
-  return employee.department === 'Enginering' && employee.age > 20;
-}).map((employee) => {
-  return {
-    name: employee.name,
-    company: '' 
-  };
-});
+// Function สำหรับเพิ่มชื่อบริษัทให้พนักงานแต่ละคน
+alphaTech.map((employee) => employee.company = 'alphaTech');
+betaSoft.map((employee) => employee.company = 'betaSoft');
+gammaDev.map((employee) => employee.company = 'gammaDev'); 
+
+const result = allEmployees
+  .filter((employee) => {
+    return employee.department === 'Engineering' && employee.age >= 20;
+  })
+  .map((employee) => {
+    return {
+      name: employee.name,
+      company: employee.company
+    } 
+  });
 
 console.log(result);
 // [
