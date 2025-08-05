@@ -10,3 +10,9 @@ const techcoolPeople = [
 ];
 
 // เริ่มเขียนโค้ดตรงนี้
+
+// 1
+const allPeople = [...techupPeople, ...techcoolPeople];
+
+// 2
+const peopleBelow20 = allPeople.filter((person) => person.age < 20);
